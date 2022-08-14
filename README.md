@@ -76,3 +76,13 @@ Instructions mean commands
 Host means a bot
 
 Hostring/cell means botnet
+
+
+# Set up
+- Put your RSA key PEM encoded in OPER.go
+
+- Set up a hidden TOR service on port 1337 and place your tor address in lyst.go
+
+- You don't to have TOR service on all time, as this is peer to peer. also your tor address embdedded inside will change to other hosts addresses automatically by crypter
+
+have fun
