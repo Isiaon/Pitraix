@@ -2,7 +2,7 @@
 
 <img src="https://i.ibb.co/nM06FQM/pitraix.png"></img>
 # Pitraix
-Modern Cross-Platform P2P Botnet over TOR that cannot be traced
+Modern Cross-Platform HTTP-Based P2P Botnet over TOR that cannot be traced
 Design is based off intelligence agencies structures for reasoning behind this design check `spec.txt`
 
 # Built-in Crypter and self-spreading
