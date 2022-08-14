@@ -1087,9 +1087,9 @@ func main() {
 
 	/*
 		####################################### DEBUGGING RE-ENABLE AT RELEASE!!! ############################################
-
-		vmCheck(userHostname, cpuVendor, machineVendor, machineModel)
 	*/
+	vmCheck(userHostname, cpuVendor, machineVendor, machineModel)
+	
 
 	if tor_running_check() { // exits if already running
 		os.Exit(0)
