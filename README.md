@@ -38,6 +38,8 @@ Names of config files, pitraix it's self and more are all dynmically generated t
 
 - Peer-to-Peer over TOR
 
+- Advanced Anti-VM detection
+
 - Ability to keylog cross-platform even when run as user and not root
 
 - Dynamic behaviour
