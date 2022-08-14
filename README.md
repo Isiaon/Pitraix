@@ -1,3 +1,5 @@
+**i am not responsible for any damage you do using this!**
+
 <img src="https://i.ibb.co/nM06FQM/pitraix.png"></img>
 # Pitraix
 Modern Cross-Platform P2P Botnet over TOR that cannot be traced
