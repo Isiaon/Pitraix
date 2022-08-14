@@ -46,7 +46,9 @@ Names of config files, pitraix it's self and more are all dynmically generated t
 
 - Built-in crypter
 
-- Built-in ransomware that never stores keys on HOST
+- Built-in ransomware that never stores keys on HOST (I am not responsible how you use this)
+
+- Auto disable backup like Volume shadow copy, onedrive and windows backup
 
 - Readiable code easy to modify, not alot of scattered files
 
