@@ -246,7 +246,6 @@ func (cft *config_File_Type) updateConf(ind string, val []string) {
 	} else {
 		fc_splitted := strings.Split(string(fc), "|")
 		if len(fc_splitted) != 2 {
-			fmt.Println("SPLITTING WTF YO FILE IS TAMPERED AFFF", len(fc_splitted))
 			AES_Key = random_Bytes(32, true)
 			createConfFile("conf file tampered not len 2")
 			cft.updateConf(ind, val)
@@ -256,7 +255,6 @@ func (cft *config_File_Type) updateConf(ind string, val []string) {
 		} else {
 			fc_deciphered, err := base64.StdEncoding.DecodeString(fc_splitted[0])
 			if err != nil {
-				fmt.Println("BASE64 1 WTF YO FILE IS TAMPERED AFFF", err)
 				AES_Key = random_Bytes(32, true)
 				createConfFile("conf file base64 1 tampered")
 				cft.updateConf(ind, val)
@@ -266,7 +264,6 @@ func (cft *config_File_Type) updateConf(ind string, val []string) {
 			} else {
 				fc_nonce, err := base64.StdEncoding.DecodeString(fc_splitted[1])
 				if err != nil {
-					fmt.Println("BASE64 2 WTF YO FILE IS TAMPERED AFFF", err)
 					AES_Key = random_Bytes(32, true)
 					createConfFile("conf file base64 2 tampered")
 					cft.updateConf(ind, val)
@@ -285,7 +282,6 @@ func (cft *config_File_Type) updateConf(ind string, val []string) {
 					} else {
 						decrypted_fc, err := decrypt_AES(fc_deciphered, fc_nonce, locAES_Key)
 						if err != nil {
-							fmt.Println("DECRYPTION WTF YO FILE IS TAMPERED AFFF", err)
 							AES_Key = random_Bytes(32, true)
 							createConfFile("conf file decryption error")
 							cft.updateConf(ind, val)
@@ -296,7 +292,6 @@ func (cft *config_File_Type) updateConf(ind string, val []string) {
 							// fmt.Println(string(decrypted_fc))
 							err = json.Unmarshal(decrypted_fc, &cft)
 							if err != nil {
-								fmt.Println("UNMARSHAL WTF YO FILE IS TAMPERED AFFF", err, string(decrypted_fc))
 								AES_Key = random_Bytes(32, true)
 								createConfFile("conf file unmarshal error tampered")
 								cft.updateConf(ind, val)
