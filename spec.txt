@@ -1,0 +1,91 @@
+[Operatives - OPERS - OPS]
+- OPS are "bot masters"
+- Anyone who is a OPER means he has access to high-instructing PGP key
+- They can instruct AGS and HSTS
+- They can instruct directly or let AGS route instructions for them
+
+
+[Agents - AGS]
+- AGS are special hosts with ability to route/relay instructions from OPER to HST or vice versa
+- AGS cannot modify or send instructions on their own as all instructions are PGP signed
+- AGS are manually chosen or "recruitted". Not all HSTS are elligable to be AGS, an AG must have all following qualities: High uptime, Good internet speed & connectivty, Are manually verified to be not VMs or advanced honeypots
+
+- AGS only know a fraction of the cell, this is to minimze damage done by a malicious/bad AG.
+- Most damage an malicious/bad AG can cause is simply not route/inform the OPERS of new HSTs infections. They cannot send any instruction on their own as long as they don't have the key. Even in case of a malicious AG not routing instructions, all HSTS have built-in failsafe for secure recovery.
+
+- AGS act as a security and privacy barrier to protect OPER from targetted special TOR attacks, as well as to increase instructing process speed
+- Example of AGS usefulness:
+Lets say you have 10k botnet (called cell/ring), if you were to send instruction to every single HST it would take a lot of time to complete all of them, not to mention a burst of network traffic from OPER machine would cause suspicon if he were to be monitored, either passively (as in TOR bad nodes/relays) or actively (Physically monitored and netowrk specifically targetted by LE). This is where AGS shine,
+Instead of instructing all of 10k, you would have 50-100 AGS whom you would instruct to route the desired instruction to their cell/ring (Each AG is responible for their own little cell that is actually part of a bigger cell etc)
+your machine would only need to send 50-100 request in a burst, compared to 10k burst request, this approach is a lot less detectable even under targetted surveillance
+since AGS are distrubted over the globe and are much fewer in numbers, instructing a huge peer2peer botnet becomes a lot faster & much more secure and private.
+
+
+[Hosts - HSTS]
+- HSTS are least privileged "bots"
+- HSTS cannot modify or send instructions on their own
+- HSTS have no contact other than their AGS address
+- HSTS cannot route/relay instructions
+- HSTS can be turned to AGS if OPER sees it fit
+- HSTS should have built-in failsafe to recieve emergency instruction in case of a bad AG/TOR downtime, example include:
+After specific peroid of no new instructions, HSTS would keep checking sites like pastebin or similar for new pastes, if a paste starts with specfic string, it would attempt to verify the paste as it would be signed by in stealthy manner, such as using ROT13 or similar to obsfucate the PGP ascii-armor. if the verification fails, the HSTS would not run the instruction and keep looking for more pastes
+
+
+[NETWORKING]
+- All communcations must be over TOR network
+- All communcations must be encrypted on top of the TOR encryption
+- Generally OPERS, AGS and HSTS all have their own Onion-Adress
+- Hyprid network model other than usual Centrlized form in basic rats/botnets
+- HSTS contact the embdedd AGS address until they have response and then never contact anyone again other than a fail safe system which is indepenent of TOR network and only activated in emergencies
+- OPERS should function as a normal AGS
+- OPERS have 2 ways to instruct HSTS, either by directly "routing" instructions from themselves back to HST, or, instructing AGS to route the instruction for them, the latter is safer while former is faster
+
+
+[OPERATIVES TECHINCAL]
+- OPERS would carry around a program that seems to be a simple game/calcaltor or other stealthy means of non suspicous, however when certain strings/numbers or such are entered in an specific order, the program would decrypt the actual OPER-Station (OPERSTATION is where OPERS manage Everything related to their cell)
+- HSTS and AGS inforamtion such as Address, Specific key, Machine information and logs, should be stored in a json formatted file encrypted inside the stealthy program and unpacked into ram/disk after authencation and decrypted using the same key/sequence entered
+- Not all OPERS should carry the stealthy program, it is just extra step when the cell becomes big and attracts attention
+
+
+[OPERSTATION TECHINCAL]
+- Parses information from the json file and stores in RAM
+- Parses AGS availablity
+- Simple terminal-like io for instructions sending and recieving
+
+
+
+[HSTS TECHINCAL]
+- Loader should gain System/root privileges, using UACME on windows, and, KLOGGER on linux
+- Loader unpacks and stores the embdedd program in GPU VBios, if iGPU is detected, program should be stored on the disk
+- VBios should be dynamically modified by it then re-flashed
+- Loader should check if already persisted
+- If all good, loader goes ahead with the flashing
+
+[LYST TECHINCAL]
+- Lyst is name of the "payload" that loader unpacked
+- Lyst should download TOR and configure it to set hidden service, as well as bridges if needed (HSTS in countries like China/Iran/Egypt/North korea need bridges)
+- Lyst would then attempt to make first contact with assigned AGS and keep attempting until AG respond, after that it would sit dormat and await further instructions
+
+
+[AGS TECHINCAL]
+- AGS after recieving the HST inforamtion contact (called register) would save it to the info-file and if an OPER instructs an AG it would include an additional data that means "I have more HSTS", an OPER can choose to request the HSTS information now or wait later
+- If OPER requests HSTS it would send it over TOR encrypted by the AG using the usual unique key generated by all HSTS/AGS, after OPER recieves the data he would then attempt to contact the HST perodicaly, if HST is online, the HST would verify the instruction signature to ensure it's an OPER who is communcating with him, and the HST would generate random AES-256-bit key and encrypt it using PGP and send it back to OPER. Now all communcations would be done with that AES 256-bit key. this is similar to how TLS handshake works.
+
+
+[HST EVENTS]
+- Events are wide variety of interesting events that took place on a HST computer
+- Events is automatic system of surveillance that allow Operatives to decide whether or not a HST is something
+- Events composs of What, When and Who (W3)
+- Events are stored in the config file as json
+- Such events that include:
+    - Computer has booted [Event type, timestamp]
+    - Computer has closed
+    - Computer has sleept
+    - Computer has locked
+    - Opened a program [Event type, timestamp, program name]
+    - Closed a program [Event type, timestamp, program name]
+    - Wrote terms or visited sites related to cybersecurity, privacy, hacking, banking, racism, nazi, porn, goverment, religion, banned organisations, extremeism of any kind, anti/pro lgbt etc
+    [Event type, timestamp, full sentence/url] 
+    
+
+- GPU Perissting will be last thing to add
