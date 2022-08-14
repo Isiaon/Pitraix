@@ -1,0 +1,38 @@
+{
+    "Address": [
+    ],
+    "IP": [
+    ],
+    "Country": [
+    ],
+    "City": [
+    ],
+    "CPU": [
+    ],
+    "RAM": [  
+    ],
+    "Username": [
+    ],
+    "Hostname": [
+    ],
+    "Chassis": [
+    ],
+    "OS": [
+    ],
+    "OSVar": [
+    ],
+    "Kernel": [
+    ],
+    "Arch": [
+    ],
+    "Vendor": [
+    ],
+    "Model": [
+    ],
+    "ContactD": [
+    ],
+    "Routes": [
+    ],
+    "Key": [
+    ]
+}
